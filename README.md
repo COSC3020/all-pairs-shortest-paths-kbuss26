@@ -29,3 +29,16 @@ the function and run automatically when you commit through a GitHub action.
 
 What is the worst-case time complexity ($\Theta$) of the algorithm? Add your
 answer, including your reasoning, to this markdown file.
+
+### Response
+
+The worst-case time complexity of this algorithm's implementation is
+$T(n) \in \Theta(|V|^3 + |E|)$ . Because I derived the algorithm from the 
+base pseudocode, we can look at said pseudocode and go from there.
+
+We initially start with a $T(|V|^2)$ time by initializing a $V \cdot V$
+matrix, then we iterate through the edges ( $T(|E|)$ ) to set the distance
+to each vertice from each origin node. Then, we iterate through $|V|$ elements
+nested in another for loop with $|V|$ elements, nested in yet another loop
+through $|V|$ elements. Altogether, this would cause the algorithm time
+complexity to jump to $T(n) \in \Theta(|V|^3 + |E|)$ .
