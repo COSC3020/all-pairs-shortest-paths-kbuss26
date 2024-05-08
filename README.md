@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2i4vCRmk)
 # All Pairs Shortest Paths
 
 In the lectures, we've seen Dijkstra's algorithm for finding the shortest paths
@@ -28,3 +29,24 @@ the function and run automatically when you commit through a GitHub action.
 
 What is the worst-case time complexity ($\Theta$) of the algorithm? Add your
 answer, including your reasoning, to this markdown file.
+
+### Response
+
+The worst-case time complexity of this algorithm's implementation is
+$T(n) \in \Theta(|V|^3)$ . Because I derived the algorithm from the 
+base pseudocode, we can look at said pseudocode and go from there.
+
+We initially start with a $T(|V|^2)$ time by initializing a $V \cdot V$
+matrix, then we iterate through the edges ( $T(|E|)$ ) to set the distance
+to each vertice from each origin node. Then, we iterate through $|V|$ elements
+nested in another for loop with $|V|$ elements, nested in yet another loop
+through $|V|$ elements. This causes the time complexity to be $T(|V|^3 + |E|)$ .
+
+Because $|E|$ has an upper bound of $T(|V|^2)$ , we say
+that this is a lower-order term compared to $T(|V|^3)$ .
+
+Therefore, this would cause the algorithm time
+complexity to exist as $T(|V|^3 + |E|) \in \Theta(|V|^3)$ .
+
+### Sources
+- https://github.com/COSC3020/dijkstra-s-algorithm-kbuss26 - main.yml (reused), base test code
